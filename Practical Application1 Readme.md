@@ -1,6 +1,7 @@
 # **Takeaway Coupon Acceptance Analysis**
 This project analyzes a dataset to identify the target demographic most likely to accept a coupon for a takeaway meal. T
 
+# **Link to Jupyter Notebook **
 # ** Key Findings**
 The analysis focused on multiple demographic features: gender, age, marital status, children, takeout frequency.  Coupon expiration was also considered as a possible factor.
 
