@@ -1,7 +1,7 @@
 # **Takeaway Coupon Acceptance Analysis**
 This project analyzes a dataset to identify the target demographic most likely to accept a coupon for a takeaway meal. T
 
-# **📊 Key Findings**
+# ** Key Findings**
 The analysis focused on multiple demographic features: gender, age, marital status, children, takeout frequency.  Coupon expiration was also considered as a possible factor.
 
 ## _Analysis by Gender_
@@ -41,7 +41,7 @@ Analysing by grouping the dataset into over 25 minute expiration v/s under did n
 ## _Income Levels_
 Income levels show some fluctuations in acceptance rates across different income brackets and genders for "Carry out & Take away" coupons.
 
-# **📊 Tying findings together**
+# ** Tying findings together**
 ## Overall Impact of Carry Away Frequency: 
 The most striking observation is the significant difference in acceptance rates between the two carry away frequency groups. Drivers who had 'AtleastOnce' carry away in the past month generally show much higher acceptance rates across most age and gender combinations compared to those in the 'neverLess1' group. This reinforces our earlier finding that prior carry away behavior is a strong indicator of coupon acceptance for this type of coupon.
 ### Age and Gender within 'AtleastOnce' Group: 
@@ -53,21 +53,21 @@ In the 'neverLess1' group, acceptance rates are generally lower. The patterns ac
 - For 46-year-old females, their high overall acceptance rate seems to be notably high in the 'neverLess1' group in this breakdown, although their rate in the 'AtleastOnce' group is also strong. This highlights that even among those who don't frequently get carry away, 46-year-old females who are offered a 'Carry out & Take away' coupon have a high propensity to accept it.
 In essence, the graph reveals that prior carry away frequency is a major differentiator in acceptance rates, and while age and gender play a role, their influence is seen within the context of this frequency. The high acceptance rates for certain age/gender groups (like 36-year-old males and 46-year-old females) are evident, and the plot helps to see how these rates break down based on their carry away frequency.
 
-# **🎯 Conclusion & Target Profile**
+# ** Conclusion & Target Profile**
 Based on the analysis, customers who have ordered takeaway in the past month are the most likely group to accept a coupon.
 
 Within that group, 36-year-old males represent a key target, while 46-year-old females are a prime target for converting infrequent users.
 
-# Potential Follow-up Actions and Hypotheses for Carry out & Take away Coupons:
+# ** Potential Follow-up Actions and Hypotheses for Carry out & Take away Coupons**
 Based on the analysis, which showed generally high acceptance rates with some variations across demographics and behaviors, here are some follow-up actions you could consider:
 
-## Explore Income Level Nuances:
+## Explore Income Level Nuances
 
 ### Action
 While overall acceptance is high, the income level analysis shows some fluctuations. Investigate the reasons behind the lower acceptance rates in certain income brackets, such as females in the $62,500 - $74,999 income bracket or males in the $75,000 - $87,499 bracket.
 Hypothesis: Factors beyond income, such as lifestyle, location, or specific needs within these income groups, might be influencing their coupon acceptance. Tailored offers or partnerships could be beneficial.
 
-## Analyze Coupon Redemption vs. Acceptance:
+## Analyze Coupon Redemption vs. Acceptance
 
 ### Action
 If redemption data is available, compare coupon acceptance rates with actual redemption rates to understand if there are any significant drop-offs between someone accepting a coupon and actually using it.
