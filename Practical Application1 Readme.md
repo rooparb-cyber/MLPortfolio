@@ -1,5 +1,5 @@
 # **Takeaway Coupon Acceptance Analysis**
-This project analyzes a dataset to identify the target demographic most likely to accept a coupon for a takeaway meal. The goal is to provide actionable insights for a future marketing campaign.
+This project analyzes a dataset to identify the target demographic most likely to accept a coupon for a takeaway meal. T
 
 # **📊 Key Findings**
 The analysis focused on multiple demographic features: gender, age, marital status, children, takeout frequency.  Coupon expiration was also considered as a possible factor.
@@ -9,7 +9,7 @@ When comparing coupon acceptance rates between genders, a noticeable difference 
 
 Males showed a 4.5% higher acceptance rate than females for the takeaway coupon in this dataset.
 
-It's important to note that while there is an observable difference, a formal statistical test (such as a chi-squared test) would be required to confirm if this result is statistically significant and not due to random chance.
+It's important to note that while there is an observable difference, further tests would be required to confirm if this result is statistically significant and not due to random chance.
 
 ## _Analysis by Age and Gender_
 Drilling down into specific age groups revealed distinct patterns within each gender.
@@ -38,6 +38,9 @@ There is a higher acceptance rate for 'Carry out & Take away' coupons among driv
 ## _Analysis By Coupon Expiration_
 Analysing by grouping the dataset into over 25 minute expiration v/s under did not show a significant difference in acceptance rates, but the samples seem skewed more towards the under 25 bucket.  Splicing by more granular expiration seems to show a higher acceptance rate in the 5 minute expiration bucket.  However, while there appears to be a correlation, particularly for the 'under 5 minutes' bucket,  the relationship isn't a simple step-wise increase as the same pattern seems to be asbsent in the next bucket.  Further the differing sample sizes across groups makes this observation discountable.
 
+## _Income Levels_
+Income levels show some fluctuations in acceptance rates across different income brackets and genders for "Carry out & Take away" coupons.
+
 # **📊 Tying findings together**
 ## Overall Impact of Carry Away Frequency: 
 The most striking observation is the significant difference in acceptance rates between the two carry away frequency groups. Drivers who had 'AtleastOnce' carry away in the past month generally show much higher acceptance rates across most age and gender combinations compared to those in the 'neverLess1' group. This reinforces our earlier finding that prior carry away behavior is a strong indicator of coupon acceptance for this type of coupon.
@@ -54,3 +57,18 @@ In essence, the graph reveals that prior carry away frequency is a major differe
 Based on the analysis, customers who have ordered takeaway in the past month are the most likely group to accept a coupon.
 
 Within that group, 36-year-old males represent a key target, while 46-year-old females are a prime target for converting infrequent users.
+
+# Potential Follow-up Actions and Hypotheses for Carry out & Take away Coupons:
+Based on the analysis, which showed generally high acceptance rates with some variations across demographics and behaviors, here are some follow-up actions you could consider:
+
+## Explore Income Level Nuances:
+
+### Action
+While overall acceptance is high, the income level analysis shows some fluctuations. Investigate the reasons behind the lower acceptance rates in certain income brackets, such as females in the $62,500 - $74,999 income bracket or males in the $75,000 - $87,499 bracket.
+Hypothesis: Factors beyond income, such as lifestyle, location, or specific needs within these income groups, might be influencing their coupon acceptance. Tailored offers or partnerships could be beneficial.
+
+## Analyze Coupon Redemption vs. Acceptance:
+
+### Action
+If redemption data is available, compare coupon acceptance rates with actual redemption rates to understand if there are any significant drop-offs between someone accepting a coupon and actually using it.
+Hypothesis: There might be other factors influencing whether an accepted coupon is redeemed, such as the convenience of the location, the timing of the offer, or the specific terms and conditions of the coupon.
