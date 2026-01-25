@@ -9,6 +9,9 @@ The business objective is to predict whether a client will subscribe to a term d
 ## Key metrics considered and reasoning 
 In this context, high recall is vital because the business goal is to capture as many potential subscribers as possible; missing a "yes" (a False Negative) represents a direct loss of revenue and a failed campaign opportunity. Since the cost of an automated marketing call is relatively low compared to the lifetime value of a new term deposit, it is more profitable to cast a wide net than to be overly selective.
 
+### Link to Notebook###
+https://github.com/rooparb-cyber/MLPortfolio/blob/main/Practical%20Application%203/solution_III.ipynb
+
 ## Key Insights Generated
 
 ### 1. Data Imbalance
