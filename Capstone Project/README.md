@@ -28,7 +28,7 @@ To address both the prediction and inference goals of this study, I will apply t
 
 # Results
 
-## Exploratory Data Analysis (EDA) Findings (Notebook link )
+## Exploratory Data Analysis (EDA) Findings ([Notebook link](https://github.com/rooparb-cyber/MLPortfolio/blob/main/Capstone%20Project/EDAAndBaseLine.ipynb) )
 The EDA identified that the dataset’s strength lies in its psychological indicators rather than its academic or demographic variables.
 
 - Feature Variance: PCA results showed a flat variance profile, showing that no single linear combination of features dominates the dataset.
@@ -63,7 +63,7 @@ The chart in the *Feature importance graphing* cell provides a mathematical rank
 
 - Secondary Signals: ExerciseFreq and FinancialStress hold mid-tier importance. While they didn't show massive shifts in EDA, the model found specific thresholds within these variables to refine its predictions.
 
-- Noise Reduction: Features like SocialActivity and SleepQuality appear at the bottom. This supports the earlier intuition that many lifestyle factors in this dataset provide very subtle, perhaps even negligible, predictive value on their own.
+- Noise Reduction: Features like SocialActivity and SleepHours appear at the bottom. This supports the earlier intuition that many lifestyle factors in this dataset provide very subtle, perhaps even negligible, predictive value on their own.
 
 - Successful Pruning: By having already removed GPA (which showed zero separation), we have ensured the model didn't waste its limited "splitting power" on a feature that would have ranked at the very bottom or confused the baseline.
 
@@ -72,7 +72,7 @@ What suggestions do you have for next steps?
 
 #### Outline of project
 
-- [Link to notebook 1]()
+- [EDA And BaseLine model notebook](https://github.com/rooparb-cyber/MLPortfolio/blob/main/Capstone%20Project/EDAAndBaseLine.ipynb)
 - [Link to notebook 2]()
 - [Link to notebook 3]()
 
