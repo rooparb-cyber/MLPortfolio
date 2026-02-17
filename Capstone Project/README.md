@@ -47,9 +47,7 @@ I had originally planned for Logistic Regression for baseline modeling, but have
 A Decision Tree Classifier was utilized to establish a performance benchmark, specifically chosen for its ability to handle non-linear thresholds and class imbalance.
 
 ### Choice of Evaluation Metric: F1-Score vs. Accuracy
-* While Accuracy is a common metric, it can be highly misleading when working with imbalanced datasets like this one.
-
-* The Accuracy Trap: In a dataset where 90% of students are "Not at Risk," a model could achieve 90% accuracy by simply predicting "Not at Risk" for everyone—completely failing to identify the 10% of students who actually need help.
+* While Accuracy is a common metric, it can be highly misleading when working with imbalanced datasets like this one. In a dataset where 90% of students are "Not at Risk," a model could achieve 90% accuracy by simply predicting "Not at Risk" for everyone—completely failing to identify the 10% of students who actually need help.
 
 * Balancing Precision and Recall: The F1-score is the harmonic mean of Precision and Recall, making it a much more robust measure for this research question.
 
