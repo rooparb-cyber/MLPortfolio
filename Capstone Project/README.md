@@ -4,6 +4,12 @@
 
 # Executive summary
 
+This project uses the [University Student Mental Health Indicators](https://www.kaggle.com/datasets/yuanchunhong/university-student-mental-health-indicators) dataset (~1,800 students) to predict **at-risk mental health status** from survey-style features. Exploratory analysis showed that **clinical scales (PHQ9, GAD7)** drive most of the separability between groups; **GPA** was dropped before modeling because it **did not separate** the outcome classes.
+
+The [Modeling.ipynb](Modeling.ipynb) notebook compares **five** classifiers under the same **stratified train/test split** and **`GridSearchCV` with `scoring='f1'`** for the **at-risk** class: **decision tree**, **SVC**, **KNN**, **random forest**, and **histogram-based gradient boosting** (`HistGradientBoostingClassifier` with **`class_weight='balanced'`**). **Linear SVC**, **random forest**, and **boosting** typically compete for the best **F1**; **KNN** is weaker on this feature set. **Figures** in the notebook summarize **CV vs test F1**, **train/predict times**, **confusion matrices** for the **top two** test-F1 models, and **feature importances** for **forest vs boosting**.
+
+**Takeaway:** **PHQ9/GAD7**-driven signal supports **moderate F1** on held-out data, but **perfect screening** is not realistic from this table alone; deployment would need **threshold tuning**, **validation on new cohorts**, and **human oversight**. It is **difficult to push precision and recall up together** to very high levels: the sample is **finite (~1,800)**, the **at-risk group is a minority**, many survey fields **overlap a lot** between classes, and the label reflects a **complex outcome** that these columns only partly capture—so models tend to hit a **performance ceiling**, and improving **recall** (catching more true at-risk students) usually **lowers precision** (more false alarms), or the reverse, unless **new or richer data** are added.
+
 # Rationale
 Institutional resources for student support are often limited and reactive. By identifying the most impactful predictors of distress, universities and high schools can shift toward proactive intervention. This allows for the design of targeted support programs that address the root causes of stress—whether they be academic, financial, or social—before they escalate into severe mental health crises.
 
@@ -24,7 +30,13 @@ To address both the prediction and inference goals of this study, I will apply t
 
 - Support Vector Classifier (SVC): To find the optimal hyperplane that separates "At Risk" from "Not At Risk" students, particularly if the relationships in the data are high-dimensional or complex.
 
-- K-Nearest Neighbors (KNN): To classify students based on their similarity to "profiles" of previous students. 
+- K-Nearest Neighbors (KNN): To classify students based on their similarity to "profiles" of previous students.
+
+- Random Forest: To combine many de-correlated trees for stronger nonlinear patterns than a single decision tree, with **`class_weight='balanced'`** and **feature importances** for interpretation.
+
+- Histogram Gradient Boosting: **`HistGradientBoostingClassifier`** with **`class_weight='balanced'`** as a strong **tabular** ensemble; compared under the same **F1**-based grid search.
+
+- Reporting (see [Modeling.ipynb](Modeling.ipynb)): **Train/predict wall times**, **metric and timing plots**, **confusion matrices** for the **two best** test-F1 fits, and **importance** plots for **random forest vs boosting**.
 
 # Results
 
@@ -67,13 +79,34 @@ The chart in the *Feature importance graphing* cell provides a mathematical rank
 
 - Successful Pruning: By having already removed GPA (which showed zero separation), we have ensured the model didn't waste its limited "splitting power" on a feature that would have ranked at the very bottom or confused the baseline.
 
+### Comparative modeling ([Modeling.ipynb](Modeling.ipynb))
+
+Five models are tuned with **GridSearchCV** and **F1 (at-risk positive)** on the same **80/20 stratified** split. **SVC** (often **linear** after search), **random forest**, and **HistGradientBoosting** are usually the **top tier** on F1; **KNN** often **trails** those three. The notebook’s **plots** compare **CV vs test F1**, **wall-clock** grid-search **training** and **test prediction** times, **confusion matrices** for the **two strongest** models on test F1, and **feature importances** for **forest** and **boosting**—both typically emphasize **PHQ9** and **GAD7**, consistent with EDA.
+
+#### Feature importance figures (saved from [Modeling.ipynb](Modeling.ipynb))
+
+Running the **Visualizations** code cell writes PNGs to the [`figures/`](figures/) folder. For a direct file link, the side-by-side panel is [`feature_importances_rf_and_histgb.png`](figures/feature_importances_rf_and_histgb.png).
+
+**Random forest** (mean decrease in impurity, best grid):
+
+![Random forest feature importances](figures/feature_importances_random_forest.png)
+
+**HistGradientBoosting** (permutation importance on the test set, `scoring='f1'`):
+
+![HistGradientBoosting permutation importance](figures/feature_importances_hist_gradient_boosting.png)
+
 #### Next steps
-What suggestions do you have for next steps?
+
+- **Talk with counselors or student-life staff** about what kinds of mistakes matter most (missing someone who needs help vs. flagging someone who is fine). That judgment should drive how you read the confusion matrix, not just a single accuracy number.
+- **Gather or link more rows** (another term, another campus, or a follow-up survey) and see whether the same models still perform well—if rankings collapse, the current results may be specific to this slice of data.
+- **Pilot with humans in the loop:** treat the model as a *suggestion* list for staff review, not an automatic label, until we have real-world feedback.
+- **Stress-test simple “what if” questions:** e.g. drop one feature group (lifestyle-only vs. clinical scales) and re-run to see whether conclusions about “what matters” stay stable.
+- **Re-run the notebook** with a different random split (change the seed) once or twice; and observe if the best model keeps changing.
 
 #### Outline of project
 
 - [EDA And BaseLine model notebook](https://github.com/rooparb-cyber/MLPortfolio/blob/main/Capstone%20Project/EDAAndBaseLine.ipynb)
-- [Link to notebook 2]()
+- [Modeling: tuned classifiers, timings, visualizations](https://github.com/rooparb-cyber/MLPortfolio/blob/main/Capstone%20Project/Modeling.ipynb)
 - [Link to notebook 3]()
 
 
