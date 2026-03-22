@@ -107,7 +107,6 @@ Running the **Visualizations** code cell writes PNGs to the [`figures/`](figures
 
 - [EDA And BaseLine model notebook](https://github.com/rooparb-cyber/MLPortfolio/blob/main/Capstone%20Project/EDAAndBaseLine.ipynb)
 - [Modeling: tuned classifiers, timings, visualizations](https://github.com/rooparb-cyber/MLPortfolio/blob/main/Capstone%20Project/Modeling.ipynb)
-- [Link to notebook 3]()
 
 
 ##### Contact and Further Information
